@@ -1,0 +1,90 @@
+{
+    "info": {
+        "name": "Employee Service",
+        "description": "Employee Service APIs for IT Asset Management system",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:8082"
+        }
+    ],
+    "item": [
+        {
+            "name": "Init Employee DB",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/employees/init-db",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "employees",
+                        "init-db"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Employee",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"employeeCode\": \"EMP001\",\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@company.com\",\n  \"department\": \"IT\"\n}"
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/employees",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "employees"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get All Employees",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/employees",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "employees"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Employee By Code",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/employees/EMP001",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "employees",
+                        "EMP001"
+                    ]
+                }
+            }
+        }
+    ]
+}
