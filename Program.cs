@@ -15,7 +15,21 @@ builder.Services.AddDbContext<EmployeeDbContext>(options =>
 
 builder.Services.AddScoped<EmployeeDomainService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
+app.UseRouting();
+app.UseCors("AllowAll");
+app.UseAuthorization();
 
 app.UseSwagger();
 app.UseSwaggerUI();
