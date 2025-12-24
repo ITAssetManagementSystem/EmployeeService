@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employee-service
+  namespace: it-employee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employee-service
+  template:
+    metadata:
+      labels:
+        app: employee-service
+    spec:
+      containers:
+        - name: employee-service
+          image: devacr231225.azurecr.io/employee-service:v1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ConnectionStrings__EmployeeDb
+              value: "Host=dev-postgres2312256060.postgres.database.azure.com;Port=5432;Database=employeedb;Username=pgadmin;Password=Strong@123"

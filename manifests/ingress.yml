@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: it-employee-ingress
+  namespace: it-employee
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: employee.sikshasathi.tech
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: employee-service
+                port:
+                  number: 80
