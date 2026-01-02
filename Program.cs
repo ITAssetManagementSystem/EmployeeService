@@ -36,4 +36,6 @@ app.UseSwaggerUI();
 
 app.MapControllers();
 
+app.MapGet("/", () => Results.Ok("Healthy"));
+
 app.Run();
