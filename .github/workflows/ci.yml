@@ -1,0 +1,14 @@
+name: CI - PR Validation
+
+on:
+  pull_request:
+
+  workflow_dispatch:
+
+jobs:
+  ci:
+    uses: ITAssetManagementSystem/CommonWorkflows/.github/workflows/ci-aks.yml@main
+    with:
+      service_name: employee-service
+      dockerfile_path: Dockerfile
+      manifests_path: manifests

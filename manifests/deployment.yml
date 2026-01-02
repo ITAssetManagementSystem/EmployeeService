@@ -20,4 +20,4 @@ spec:
             - containerPort: 8080
           env:
             - name: ConnectionStrings__EmployeeDb
-              value: "Host=dev-postgres2312256060.postgres.database.azure.com;Port=5432;Database=employeedb;Username=pgadmin;Password=Strong@123"
+              value: "Host=dev-postgres271225.postgres.database.azure.com;Port=5432;Database=employeedb;Username=pgadmin;Password=Strong@123"

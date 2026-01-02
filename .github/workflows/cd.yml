@@ -1,0 +1,22 @@
+name: CD - Deploy to AKS
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+permissions:
+    id-token: write
+    contents: read
+
+jobs:
+    cd:
+        uses: ITAssetManagementSystem/CommonWorkflows/.github/workflows/cd-aks.yml@main
+        with:
+            service_name: employee-service
+            dockerfile_path: Dockerfile
+            manifests_path: manifests
+            namespace: it-employee
+            acr_name: devacr231225
+        secrets: inherit
