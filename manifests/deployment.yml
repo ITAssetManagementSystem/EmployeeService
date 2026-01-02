@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
         - name: employee-service
-          image: devacr231225.azurecr.io/employee-service:v1
+          image: devacr301225.azurecr.io/employee-service:v1
           ports:
             - containerPort: 8080
           env:
             - name: ConnectionStrings__EmployeeDb
-              value: "Host=dev-postgres271225.postgres.database.azure.com;Port=5432;Database=employeedb;Username=pgadmin;Password=Strong@123"
+              value: "Host=dev-postgres301225.postgres.database.azure.com;Port=5432;Database=employeedb;Username=pgadmin;Password=Strong@123"

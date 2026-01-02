@@ -5,11 +5,11 @@ metadata:
   namespace: it-employee
   annotations:
     kubernetes.io/ingress.class: azure/application-gateway
-    appgw.ingress.kubernetes.io/ssl-redirect: "true"
-    appgw.ingress.kubernetes.io/appgw-ssl-certificate: "wildcard-sikshasathi-tech"
+    # appgw.ingress.kubernetes.io/ssl-redirect: "true"
+    # appgw.ingress.kubernetes.io/appgw-ssl-certificate: "wildcard-sikshasathi-tech"
 spec:
   rules:
-    - host: employee.sikshasathi.tech
+    - host: employee.megcloud.space
       http:
         paths:
           - path: /
