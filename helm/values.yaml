@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: devacr301225.azurecr.io/employee-service
-  tag: bdeaac4ce599b8a911f50954ebf10fc1a9f0d1c7
+  tag: 593a49601ec07f2b2543c764c8044dbbad5847ab
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
@@ -10,7 +10,6 @@ service:
 env:
   SERVER_PORT: "8080"
   ConnectionStrings__EmployeeDb: "Host=dev-postgres301225.postgres.database.azure.com;Port=5432;Database=employeedb;Username=pgadmin;Password=Strong@123"
-
 ingress:
   enabled: true
   className: azure/application-gateway
