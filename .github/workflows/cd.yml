@@ -11,12 +11,14 @@ permissions:
     contents: read
 
 jobs:
-    cd:
-        uses: ITAssetManagementSystem/CommonWorkflows/.github/workflows/cd-aks.yml@main
+    deploy:
+        uses: ITAssetManagementSystem/CommonWorkflows/.github/workflows/cd-helm-aks.yml@main
         with:
             service_name: employee-service
-            dockerfile_path: Dockerfile
-            manifests_path: manifests
             namespace: it-employee
+            values_file: helm/values.yaml
+            chart_version: 1.0.0
             acr_name: devacr301225
+            aks_name: dev-aks
+            resource_group: dev-rg
         secrets: inherit
