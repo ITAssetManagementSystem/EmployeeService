@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: devacr301225.azurecr.io/employee-service
-  tag: 593a49601ec07f2b2543c764c8044dbbad5847ab
+  tag: 6444a48113fc7d89009fa59edf6c3c9534db38fd
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
