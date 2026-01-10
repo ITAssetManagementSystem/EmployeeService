@@ -9,7 +9,7 @@ spec:
   sources:
     - repoURL: oci://devacr301225.azurecr.io/helm/service
       chart: service
-      targetRevision: 1.0.1
+      targetRevision: 1.0.2
       helm:
         passCredentials: true
         valueFiles:
